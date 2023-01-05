@@ -1,3 +1,7 @@
 <h1>All articles will live here</h1>
 <p><strong>Title: </strong><%= @article.title %></p>
-<p><strong>Description: </strong><%= @article.description %></p>
+<p><strong>Description: </strong><%= @article.description %></p><br/>
+
+<button><%= link_to 'Articles List', articles_path %></button> |
+<button><%= link_to 'Edit', edit_article_path(@article) %></button> |
+<button><%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
