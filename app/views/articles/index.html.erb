@@ -6,7 +6,7 @@
     <% @articles.each do |a| %>
         <div class="card text-center col-8 mb-4 mx-auto shadow">
             <div class="card-header">
-                by Matty Kinz
+                by - <%= a.user.username %>
             </div>
             <div class="card-body">
                 <h5 class="card-title"><%= a.title %></h5>

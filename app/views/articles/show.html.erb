@@ -3,7 +3,7 @@
 
     <div class="card text-center col-8 mb-4 mx-auto shadow">
         <div class="card-header">
-            by Matty Kinz
+        By - <%=  @article.user.username %>
         </div>
         <div class="card-body">
             <div class="card-text text-start"><%= simple_format(@article.description) %></div>
