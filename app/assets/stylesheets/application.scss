@@ -15,3 +15,46 @@
  */
 
 @import "bootstrap";
+
+.navbar {
+  background-color: #000000;
+}
+.nav-link {
+  color: #ffffff !important;
+}
+.navbar-brand {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: bold;
+  float: left;
+}
+
+.navbar-brand:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.home-container {
+  padding-top: 24px;
+}
+
+.jumbo-header {
+  color: #ffffff;
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.jumbo-subtext {
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+
+.home-jumbo {
+  height: 425px;
+  background-image: asset-url("home-bcgd-img.jpg");
+  background-size: cover;
+}
+
+.article-card {
+  width: 257px;
+}
