@@ -1,7 +1,7 @@
 <% @articles.each do |a| %>
     <div class="card text-center col-8 mb-4 mx-auto shadow">
         <div class="card-header">
-            by - <%= a.user.username %>
+            by - <%= link_to a.user.username, user_path(a.user) %>
         </div>
         <div class="card-body">
             <h5 class="card-title"><%= a.title %></h5>
