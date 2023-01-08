@@ -3,16 +3,18 @@
     <%= gravatar_for @user, size: 200 %>
 
     <% if current_user == @user %>
-        <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info mb-4 mx-auto' %>
+        <div class="mx-auto">
+            <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info mb-4' %>
+            <%= link_to 'Delete your profile', user_path(current_user), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-outline-danger mb-4' %>
+        </div>
     <% end %>
-
     <% if @articles.length > 0 %>
             <%= render 'articles/article' %>
         <% else %>
             <h1 class='mx-auto mb-4'>No articles to display</h1>
+            <% if current_user == @user %>
+                <%= link_to 'Write first article', new_article_path, class: 'btn btn-success mb-4 mx-auto' %>
+            <% end %>
     <% end %>
 
-    <% if current_user == @user %>
-        <%= link_to 'Write first article', new_article_path, class: 'btn btn-success mb-4 mx-auto' %>
-    <% end %>
 
