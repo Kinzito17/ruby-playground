@@ -7,11 +7,9 @@
         </div>
         <div class="card-body">
             <div class="card-text text-start"><%= simple_format(@article.description) %></div>
-            <% if current_user == @article.user %>
+            <% if logged_in && current_user == @article.user %>
                 <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-outline-success' %>
                 <%= link_to 'Delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-outline-danger' %>
-            <% else %>
-                <% nil %>
             <% end %>
         </div>
         <div class="card-footer text-muted">

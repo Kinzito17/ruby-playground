@@ -10,8 +10,6 @@
             <% if logged_in && current_user == a.user %>
                 <%= link_to 'Edit', edit_article_path(a.id), class: 'btn btn-outline-info' %>
                 <%= link_to 'Delete', article_path(a.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-outline-danger' %>
-            <% else %>
-                <% nil %>
             <% end %>
         </div>
         <div class="card-footer text-muted">

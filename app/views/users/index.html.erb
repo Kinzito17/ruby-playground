@@ -12,9 +12,11 @@
             </div>
             <div class="card-body">
                 <%= gravatar_for user, size: 150 %>
-               <p classs='card-text'> <%= pluralize(user.articles.count, "article") %></p>
+                <p classs='card-text'> <%= pluralize(user.articles.count, "article") %></p>
                 <%= link_to 'View profile', user_path(user.id), class: 'btn btn-outline-success' %>
+                <% if logged_in && current_user == user %>
                 <%= link_to 'Edit', edit_user_path(user.id), class: 'btn btn-outline-info' %>
+                <% end %>
             </div>
             <div class="card-footer text-muted">
                 <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>

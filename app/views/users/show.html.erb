@@ -3,15 +3,16 @@
     <%= gravatar_for @user, size: 200 %>
 
     <% if current_user == @user %>
-    <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info mb-4 mx-auto' %>
-    <% else %>
-        <% nil %>
+        <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info mb-4 mx-auto' %>
     <% end %>
-
 
     <% if @articles.length > 0 %>
             <%= render 'articles/article' %>
         <% else %>
             <h1 class='mx-auto mb-4'>No articles to display</h1>
-            <%= link_to 'Write first article', new_article_path, class: 'btn btn-success mb-4 mx-auto' %>
     <% end %>
+
+    <% if current_user == @user %>
+        <%= link_to 'Write first article', new_article_path, class: 'btn btn-success mb-4 mx-auto' %>
+    <% end %>
+
