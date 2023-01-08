@@ -1,7 +1,12 @@
-<div class="container article-index">
+<h1 class='text-center py-4'>Articles listing Page!</h1>
 
-    <h1 class='text-center py-4'>Articles listing Page!</h1>
-
-    <%= render 'article', @user %>
-
+<div class="digg_pagination mb-4 align-self-center">
+    <%= will_paginate @articles, class: 'text-center mb-4' %>
 </div>
+
+<%= render 'article', @user %>
+
+<div class="digg_pagination align-self-center">
+    <%= will_paginate @articles, class: 'text-center mb-4' %>
+</div>
+

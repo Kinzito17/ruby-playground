@@ -8,7 +8,7 @@
             <p class="card-text"><%= a.description %></p>
             <%= link_to 'Show', article_path(a.id), class: 'btn btn-outline-success' %>
             <%= link_to 'Edit', edit_article_path(a.id), class: 'btn btn-outline-info' %>
-            <%= link_to 'Delete', article_path(a.id), class: 'btn btn-outline-danger' %>
+            <%= link_to 'Delete', article_path(a.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-outline-danger' %>
         </div>
         <div class="card-footer text-muted">
             <small>Created <%= time_ago_in_words(a.created_at) %> ago,

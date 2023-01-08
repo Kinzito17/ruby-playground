@@ -1,5 +1,9 @@
-<div class="article-index">
     <h1 class='text-center my-4'>Meet the bloggers</h1>
+
+    <div class="digg_pagination mb-4 align-self-center">
+        <%= will_paginate @users, class: 'text-center mb-4' %>
+    </div>
+
 
     <% @users.each do |user| %>
         <div class="card text-center col-8 mb-4 mx-auto shadow">
@@ -17,4 +21,7 @@
             </div>
         </div>
     <% end %>
-</div>
+
+    <div class="digg_pagination mb-4 align-self-center">
+        <%= will_paginate @users, class: 'text-center mb-4' %>
+    </div>
