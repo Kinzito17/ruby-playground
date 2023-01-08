@@ -2,7 +2,12 @@
 
     <%= gravatar_for @user, size: 200 %>
 
+    <% if current_user == @user %>
     <%= link_to 'Edit your profile', edit_user_path(@user), class: 'btn btn-outline-info mb-4 mx-auto' %>
+    <% else %>
+        <% nil %>
+    <% end %>
+
 
     <% if @articles.length > 0 %>
             <%= render 'articles/article' %>
